@@ -16,9 +16,11 @@ Creare una funzione per capire se la parola inserita è palindroma
 // chiedere all'utente di inserire  una parola
 //funzone palindrmoa
 
-/*
-let nomeUtente = prompt("inserisci una parola");
 
+/*
+let nomeUtente = "";
+nomeUtente = prompt("inserisci una parola");
+let nomeInverso = parolaDivisa(nomeUtente);
 
 
 function parolaDivisa(reverse){
@@ -34,8 +36,8 @@ if (nomeUtente == nomeInverso){
     console.log('la parola non è palindroma')
 }
 
-/*
 
+*/
 
 
 
@@ -77,28 +79,84 @@ function sommaNumeri(num1,num2){
 }
 
 
-
 //pari o dispari
 
 function pariDispari(pari){
   
     if ((pari % 2) == 0 ){
-
+       alert("il numero è pari")
        return true
     }else{
-         
+       alert("il numero è dispari")  
       return  false
+      
     }
     
 }
 
 
+//let inputPariDispari = prompt("scegli pari o dispari");
 
-/*let k = parseInt(prompt("inserisci numero"))
+let inputNumero = 0;
+let numeroUtente = 0;
 
-k2 = pariDispari(k);
+for (let inputNumero = 0; inputNumero <= 5  ; inputNumero++ ){
+    
+    let inputNumero = parseInt(prompt("inserisci un numero da 1 a 5"));
+    
+    if (inputNumero > 5 ){
+        alert('il numero è maggiore di 5');
+        
+    }else{  
+    
+     numeroUtente = inputNumero;
+     alert("il tuo numero è:"+ " " + numeroUtente )
+     break;
+    }
+}
 
-console.log(pariDispari(k));*/
+
+
+
+ //numero random del pc
+let numeroRandomPc = randomNumber();
+alert("il numero del pc è: " + numeroRandomPc );
+
+//somma dei due numeri 
+alert("la somma dei numeri è :"+ " " + sommaNumeri(numeroUtente,numeroRandomPc));
+
+
+//numero finale (pari o dispari)
+let numeroFinale = pariDispari(sommaNumeri(numeroUtente,numeroRandomPc));
+
+if (numeroFinale == true ){
+    alert("hai vinto");
+}else{
+    alert("hai perso");
+}
+
+
+
+
+
+//console.log(pariDispari(sommaNumeri(4,2))); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+
+
 
 
 
