@@ -76,26 +76,30 @@ function sommaNumeri(num1,num2){
     return num1 + num2 
 }
 
+
+
 //pari o dispari
 
-function pariDispari(){
-    
-    let pari = 0;
-    
-    if (pari % 2 == 0 ){
-        console.log('il numero è pari')
+function pariDispari(pari){
+  
+    if ((pari % 2) == 0 ){
+
+       return true
     }else{
-       console.log('il numero è dispari') 
+         
+      return  false
     }
-   
+    
 }
 
 
 
-let k = parseInt(prompt("inserisci un numero"));
+/*let k = parseInt(prompt("inserisci numero"))
 
-k = pariDispari();
-console.log(pariDispari(k));
+k2 = pariDispari(k);
+
+console.log(pariDispari(k));*/
+
 
 
 
