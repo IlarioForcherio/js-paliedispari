@@ -90,10 +90,12 @@ function pariDispari(){
    
 }
 
+
+
 let k = parseInt(prompt("inserisci un numero"));
 
 k = pariDispari();
-console.log(k);
+console.log(pariDispari(k));
 
 
 
