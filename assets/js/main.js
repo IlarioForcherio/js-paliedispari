@@ -95,7 +95,7 @@ function pariDispari(pari){
 }
 
 
-//let inputPariDispari = prompt("scegli pari o dispari");
+let inputPariDispari = prompt("scegli pari o dispari");
 
 let inputNumero = 0;
 let numeroUtente = 0;
@@ -114,7 +114,7 @@ for (let inputNumero = 0; inputNumero <= 5  ; inputNumero++ ){
      break;
     }
 }
-
+// inserire anche il controllo del numero (se quello che l'utente ha inserito è un numero)
 
 
 
@@ -123,7 +123,7 @@ let numeroRandomPc = randomNumber();
 alert("il numero del pc è: " + numeroRandomPc );
 
 //somma dei due numeri 
-alert("la somma dei numeri è :"+ " " + sommaNumeri(numeroUtente,numeroRandomPc));
+alert("la somma dei numeri è :" + " " + sommaNumeri(numeroUtente,numeroRandomPc));
 
 
 //numero finale (pari o dispari)
