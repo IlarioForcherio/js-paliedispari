@@ -66,82 +66,111 @@ Dichiariamo chi ha vinto.*/
 //funzioni
 //numero Random
 
-function randomNumber() {
+function randomNumber(min,max) {
     
-    return num = Math.floor(Math.random() * 5) + 1 ;
+    return num = Math.floor(Math.random() * (max - min + min) ) + min ;
      
 }
 
 //Somma due numeri
 
-function sommaNumeri(num1,num2){
-    return num1 + num2 
+function sommaNumeri(x,y){
+    let somma = x + y; 
+    return somma;
+
 }
 
 
 //pari o dispari
-
-function pariDispari(pari){
-  
-    if ((pari % 2) == 0 ){
-       alert("il numero è pari")
-       return true
+let valoreControllo = '';
+function pariDispari(){
+   
+    
+  if (sommaDeiValori % 2 == 0 ){
+    valoreControllo = 'pari';
+       return valoreControllo;
     }else{
-       alert("il numero è dispari")  
-      return  false
-      
+        valoreControllo = 'dispari';
+        return valoreControllo;
     }
+   
     
 }
 
+// fine funzioni
 
-let inputPariDispari = prompt("scegli pari o dispari");
 
-let inputNumero = 0;
-let numeroUtente = 0;
+let sceltaPariDispari = "";
 
-for (let inputNumero = 0; inputNumero <= 5  ; inputNumero++ ){
-    
+//controllo
+for( ; ; ){
+    //input pari dispari
+    sceltaPariDispari = prompt("inserisci pari o dispari");
+
+     if(sceltaPariDispari == 'pari'){
+        
+        console.log(`la tua scelta è:  ${sceltaPariDispari}`)
+        alert("hai scelto : pari");
+        break; 
+    }
+    else if(sceltaPariDispari == 'dispari'){
+        
+        console.log(`la tua scelta è:  ${sceltaPariDispari}`)
+        alert("hai scelto : dispari");
+        break; 
+    }  
+    else{
+        alert("non hai inserito un valore valido");   
+    }
+
+}
+
+
+//numero inserito dall'utente
+
+let numeroUtente = 0;   
+
+
+for (; ;){
     let inputNumero = parseInt(prompt("inserisci un numero da 1 a 5"));
     
-    if (inputNumero > 5 ){
-        alert('il numero è maggiore di 5');
-        
-    }else{  
-    
-     numeroUtente = inputNumero;
-     alert("il tuo numero è:"+ " " + numeroUtente )
-     break;
+    if (inputNumero >= 1 && inputNumero <= 5){
+        numeroUtente = inputNumero;
+        break;
+    }else{
+    console.log('non hai inserito una valore valido')
+
     }
-}
-// inserire anche il controllo del numero (se quello che l'utente ha inserito è un numero)
-
-
-
- //numero random del pc
-let numeroRandomPc = randomNumber();
-alert("il numero del pc è: " + numeroRandomPc );
-
-//somma dei due numeri 
-alert("la somma dei numeri è :" + " " + sommaNumeri(numeroUtente,numeroRandomPc));
-
-
-//numero finale (pari o dispari)
-let numeroFinale = pariDispari(sommaNumeri(numeroUtente,numeroRandomPc));
-
-if (numeroFinale == true ){
-    alert("hai vinto");
-}else{
-    alert("hai perso");
+    
+    
 }
 
+alert(`il tuo numero è:  ${numeroUtente} `);
 
 
 
+// creo un numero random del pc
+let numeroRandompc = randomNumber(1,5);
+alert(`il numero random del pc è ${numeroRandompc} `);
 
-//console.log(pariDispari(sommaNumeri(4,2))); 
+//sommo i due valori ottenuti
+let sommaDeiValori = sommaNumeri(numeroUtente , numeroRandompc );
+alert(`la somma dei due valori è ${sommaDeiValori}`)
+
+//controllo se il valore è pari o dispari
+let valoreFinale = pariDispari(sommaDeiValori);
+alert(`ìl valore finale è ${valoreFinale} `);
+
+console.log(`${sommaDeiValori} è: ${valoreControllo}`)
+
+//vediamo chi ha vinto 
 
 
+if(sceltaPariDispari == valoreControllo){
+    console.log(` hai vinto` );
+} else {
+    console.log(`hai perso`);
+}
 
 
 
